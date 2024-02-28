@@ -1,3 +1,4 @@
+from langchain_google_genai import GoogleGenerativeAIEmbeddings as GE
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI as chat
@@ -17,6 +18,9 @@ load_dotenv()
 
 #To get the Keys from streamlit secret
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
+
+
+GOOGLE_API_KEY="AIzaSyAIlLtVd75nZp35P7uv_1XNbMzV8z4hDWM"
 
 st.set_page_config(
     page_title="Information about Palestine",
