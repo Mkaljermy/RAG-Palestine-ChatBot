@@ -64,7 +64,7 @@ def get_response(question):
     
     stuff_answer = stuff_chain(
     {
-        "input_documents": pages[:13], "question": question
+        "input_documents": pages, "question": question
         }, 
         return_only_outputs=True
     )
