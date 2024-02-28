@@ -20,7 +20,6 @@ load_dotenv()
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 
-GOOGLE_API_KEY="AIzaSyAIlLtVd75nZp35P7uv_1XNbMzV8z4hDWM"
 
 st.set_page_config(
     page_title="Information about Palestine",
