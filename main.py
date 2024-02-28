@@ -86,6 +86,24 @@ if submit:
         response = "Please type any questions about Palestine"
         st.write(response)
 
+footer="""
+<style>
+        .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        }
+</style>
+<div class="footer">
+<p>For Feedback: 
+<a href="https://www.linkedin.com/in/mohammad-aljermy-139b6b24a/" target="_blank">Mohammad Aljermy</a> |
+</p>
+</div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
+
     else:
         response = get_response(input)
         st.write(response)
