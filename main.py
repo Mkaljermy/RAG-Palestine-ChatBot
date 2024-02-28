@@ -17,7 +17,7 @@ load_dotenv()
 
 
 #To get the Keys from streamlit secret
-#os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
+os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 st.set_page_config(
     page_title="Information about Palestine",
