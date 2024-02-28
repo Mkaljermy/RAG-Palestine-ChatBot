@@ -64,7 +64,7 @@ def get_response(question):
     
     stuff_answer = stuff_chain(
     {
-        "input_documents": pages, "question": question
+        "input_documents": pages[:13], "question": question
         }, 
         return_only_outputs=True
     )
@@ -84,22 +84,3 @@ if submit:
     else:
         response = get_response(input)
         st.write(response)
-
-
-footer="""
-<style>
-        .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        }
-</style>
-<div class="footer">
-<p>For Feedback: 
-<a href="https://www.linkedin.com/in/mohammad-aljermy-139b6b24a/" target="_blank">Mohammad Aljermy</a>
-</p>
-</div>
-"""
-st.markdown(footer, unsafe_allow_html=True)
