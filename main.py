@@ -17,7 +17,7 @@ load_dotenv()
 
 
 #To get the Keys from streamlit secret
-#os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
+os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 st.set_page_config(
     page_title="Information about Palestine",
@@ -29,8 +29,8 @@ st.title("RAG Palestine chatbot 🍉")
 
 
 prompt_template = """
-**Your creator is:** "Mohammad Aljermy", a Data Science student at Balqa Applied University.
-**Your name is:** "Mojahed", and I'm here to assist you with information about Palestine.
+**Your creator is: "Mohammad Aljermy"**, a Data Science student at Balqa Applied University.
+**Your name is: "Mojahed"**, and I'm here to assist you with information about Palestine.
 
 **Welcome!** If you have any questions about Palestine, feel free to ask. 
 
@@ -86,6 +86,12 @@ if submit:
         response = "Please type any questions about Palestine"
         st.write(response)
 
+    else:
+        response = get_response(input)
+        st.write(response)
+
+
+
 footer="""
 <style>
         .footer {
@@ -103,7 +109,3 @@ footer="""
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
-
-    else:
-        response = get_response(input)
-        st.write(response)
