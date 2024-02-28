@@ -1,7 +1,7 @@
-from langchain_google_genai import GoogleGenerativeAIEmbeddings as GE
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
-from langchain_google_genai import ChatGoogleGenerativeAI as chat
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.document_loaders import PyPDFLoader
 from langchain.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
@@ -53,7 +53,7 @@ prompt = PromptTemplate(
 
 
 def get_response(question):
-    model = chat(model = 'gemini-pro', google_api_key=os.getenv("GOOGLE_API_KEY"),
+    model = ChatGoogleGenerativeAI(model = 'gemini-pro', google_api_key=os.getenv("GOOGLE_API_KEY"),
                               temperature=0.3)
     
     pdf_loader = PyPDFLoader('Palestine1.pdf')
