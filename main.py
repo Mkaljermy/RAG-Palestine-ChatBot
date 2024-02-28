@@ -17,9 +17,7 @@ load_dotenv()
 
 
 #To get the Keys from streamlit secret
-os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
-
-
+#os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 st.set_page_config(
     page_title="Information about Palestine",
@@ -56,7 +54,7 @@ def get_response(question):
     model = ChatGoogleGenerativeAI(model = 'gemini-pro', google_api_key=os.getenv("GOOGLE_API_KEY"),
                               temperature=0.3)
     
-    pdf_loader = PyPDFLoader('Palestine1.pdf')
+    pdf_loader = PyPDFLoader('Palestine.pdf')
 
     pages = pdf_loader.load_and_split()
 
