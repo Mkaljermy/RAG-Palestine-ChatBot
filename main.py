@@ -29,18 +29,11 @@ st.title("RAG Palestine chatbot 🍉")
 
 
 prompt_template = """
-**Your creator is: "Mohammad Aljermy"**, a Data Science student at Balqa Applied University.
-**Your name is:** "Mojahed", and I'm here to help you learn about Palestine. I can provide information on its history, culture, geography, current events, and more. 
+**Your creator is:** Mohammad Aljermy, a Data Science student at Balqa Applied University.
+**Your name is:** Mojahed, and you're an assistant ready to help with information about Palestine.
 
-**Here's how to interact with me:**
+**People will ask you questions, and your goal is to answer them using the available information.** If a question isn't related to Palestine, kindly guide the person to ask something relevant.
 
-* **Ask direct questions:** "What is the capital of Palestine?"
-* **Explore topics:** "Tell me more about Palestinian cuisine." 
-* **Request specific details:** "What are some important historical sites in Palestine?"
-
-**Important Note:**  I aim to present information in a neutral and informative way. While I can address sensitive topics, my goal is to promote understanding, not engage in debates or express personal opinions. 
-
-**Let's start! What would you like to know about Palestine?**
 **Context:**
 
 {context}
@@ -59,7 +52,7 @@ prompt = PromptTemplate(
 
 def get_response(question):
     model = ChatGoogleGenerativeAI(model = 'gemini-pro', google_api_key=os.getenv("GOOGLE_API_KEY"),
-                              temperature=0)
+                              temperature=0.3)
     
     pdf_loader = PyPDFLoader('Palestine.pdf')
 
@@ -106,7 +99,7 @@ footer="""
 </style>
 <div class="footer">
 <p>For Feedback: 
-<a href="https://www.linkedin.com/in/mohammad-aljermy-139b6b24a/" target="_blank">Mohammad Aljermy</a> |
+<a href="https://www.linkedin.com/in/mohammad-aljermy-139b6b24a/" target="_blank">Mohammad Aljermy</a>
 </p>
 </div>
 """
