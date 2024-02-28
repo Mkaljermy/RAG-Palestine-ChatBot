@@ -1,4 +1,3 @@
-from langchain_google_genai import GoogleGenerativeAIEmbeddings as AE
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI as chat
